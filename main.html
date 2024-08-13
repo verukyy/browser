@@ -1,2 +1,183 @@
-<title>test</title>
-<p>Error</p>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amatorska przeglądarka internetowa</title>
+    <meta name="description" content="Amatorska przeglądarka internetowa z nowoczesnym ciemnym motywem">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e1e;
+            color: #dcdcdc;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            color: #f8f8f8;
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .search-bar form {
+            display: flex;
+            width: 100%;
+            max-width: 800px;
+        }
+        .search-bar input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 5px 0 0 5px;
+            background-color: #2d2d2d;
+            color: #fff;
+            font-size: 16px;
+        }
+        .search-bar input[type="submit"] {
+            padding: 10px 20px;
+            border: 1px solid #333;
+            background-color: #ff5722;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .search-bar input[type="submit"]:hover {
+            background-color: #e64a19;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .tabs button {
+            background-color: #333;
+            border: 1px solid #444;
+            color: #fff;
+            padding: 15px 25px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .tabs button:hover {
+            background-color: #444;
+        }
+        .social-buttons {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .social-buttons a {
+            text-decoration: none;
+            color: #dcdcdc;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        .social-buttons a:hover {
+            color: #ff5722;
+        }
+        .news-button {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 25px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .news-button:hover {
+            background-color: #444;
+        }
+        .news-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .news-modal-content {
+            background: #2d2d2d;
+            color: #dcdcdc;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            text-align: center;
+        }
+        .news-modal-content button.close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: #dcdcdc;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .news-modal-content button.close:hover {
+            color: #ff5722;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Amatorska przeglądarka internetowa</h1>
+        </header>
+        <div class="search-bar">
+            <form action="https://www.google.com/search" method="get">
+                <input type="text" name="q" placeholder="Wyszukaj w Google...">
+                <input type="submit" value="Szukaj">
+            </form>
+        </div>
+
+        <div class="social-buttons">
+            <a href="https://www.messenger.com" target="_blank">Messenger</a>
+            <a href="https://www.youtube.com" target="_blank">YouTube</a>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://mail.google.com" target="_blank">Gmail</a>
+        </div>
+        <button class="news-button" onclick="showNewsModal()">Nowości</button>
+    </div>
+
+    <!-- News Modal -->
+    <div class="news-modal" id="news-modal">
+        <div class="news-modal-content">
+            <button class="close" onclick="hideNewsModal()">×</button>
+            <h2>Nowości przeglądarki</h2>
+            <p>Tu znajdują się najnowsze informacje o przeglądarce.</p>
+        </div>
+    </div>
+
+    <script>
+        function showNewsModal() {
+            document.getElementById('news-modal').style.display = 'flex';
+        }
+
+        function hideNewsModal() {
+            document.getElementById('news-modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
